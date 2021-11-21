@@ -5,5 +5,5 @@ import { LayoutProps } from "ssr-types-react";
 import styles from "./index.module.less";
 
 export default (props: LayoutProps) => {
-  return <div className={styles.app}>{props.children!}</div>
-}
+  return <div className={styles.app}>{props.children!}</div>;
+};
