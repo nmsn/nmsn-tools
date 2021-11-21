@@ -12,66 +12,19 @@ ul {
   list-style: none;
 }
 
-:global {
-  .loading {
-    width: 30px;
-    height: 30px;
-    .verticalLevelCenter
-  }
-}
-.verticalCenter {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%)
-}
-.levelCenter {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0)
-}
-.verticalLevelCenter {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%)
-}
-.verticalCenterFlex {
+@titleFontSize: 32px;
+
+.title {
+  position: relative;
+  z-index: 10;
   display: flex;
-  align-items: center;
-}
-.levelCenterFlex {
-  display: flex;
-  justify-content: center;
-}
-.verticalLevelCenterFlex {
-  display: flex;
+  min-height: 100vh;
+  width: 100%;
   justify-content: center;
   align-items: center;
-}
-.overflowEllipsis {
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-}
-.pName {
-  font-size: 15px;
-  color: #000000;
-  margin-top: 10px;
-  padding-left: 9px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  height: 25px;
-  line-height: 25px;
-  z-index: 99;
-}
-.pDesc {
-  padding-left: 9px;
-  font-size: 13px;
-  color: #999999;
-  margin-bottom: 20px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  z-index: 99;
+  font-size: @titleFontSize;
+  color: transparent;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.6),
+    0px 4px 4px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.2rem;
 }
