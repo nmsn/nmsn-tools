@@ -1,0 +1,28 @@
+.switch {
+  width: 100px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switchItem {
+  // height: 100px;
+  flex: 1 1;
+  // 间隔
+  margin: 10px;
+  width: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+
+  transition: 0.3s;
+
+  &:hover {
+    flex: 2 1;
+  }
+}
+
+.active {
+  background: rgba(255, 255, 255, 0.8);
+}
