@@ -9,14 +9,6 @@ import Board from '@/components/board'
 import HistoryToday from '../historyToday'
 import styles from './index.module.less'
 
-const ContentCard = () => {
-  return (
-    <div style={{ margin: 10 }}>
-      <Card title="测试数据">测试内容</Card>
-    </div>
-  )
-}
-
 export default function Index(props: SProps) {
   const { state, dispatch } = useContext<IContext<IData>>(STORE_CONTEXT)
 

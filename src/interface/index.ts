@@ -6,3 +6,4 @@ export interface IApiService {
 
 export * from './detail'
 export * from './historyToday'
+export * from './rss'
