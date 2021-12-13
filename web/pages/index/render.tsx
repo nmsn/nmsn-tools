@@ -7,6 +7,7 @@ import Card from '@/components/card'
 import Switch from '@/components/switch'
 import Board from '@/components/board'
 import HistoryToday from '../historyToday'
+import RSS from '../rss'
 import styles from './index.module.less'
 
 export default function Index(props: SProps) {
@@ -23,7 +24,12 @@ export default function Index(props: SProps) {
     <div className={styles.container}>
       <Title style={{ margin: '20px 0' }}>NMSN</Title>
       <div className={styles.content}>
-        <Board>{step === 0 ? <HistoryToday /> : undefined}</Board>
+        <Board>
+          <>
+            {step === 0 ? <HistoryToday /> : undefined}
+            {step === 1 ? <RSS /> : undefined}
+          </>
+        </Board>
 
         <Switch onChange={onChange} num={5} />
       </div>

@@ -1,18 +1,18 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import axios from 'axios'
 import Card from '@/components/card'
-import { HistoryTodayItem } from '~/typings/data'
+import { RSSItem } from '~/typings/data'
 import styles from './index.module.less'
 
-const HistoryToday: React.FC = () => {
-  const [data, setData] = useState<HistoryTodayItem[]>([])
+const RSS: React.FC = () => {
+  const [data, setData] = useState<RSSItem[]>([])
 
   const getData = useCallback(async () => {
     try {
       const {
-        data: { list = [], year },
-      } = await axios.get('/api/historyToday')
-      setData(list)
+        data: { items = [] },
+      } = await axios.get('/api/rss')
+      setData(items)
     } catch (e) {
       console.log(e)
       setData([])
@@ -28,11 +28,11 @@ const HistoryToday: React.FC = () => {
   }
 
   return (
-    <div className={styles.historyToday}>
-      {data?.map(({ year, title, link }) => (
+    <div className={styles.rss}>
+      {data?.map(({ title, link }) => (
         <Card
           key={title}
-          title={year}
+          title={title}
           children={title}
           onClick={link ? () => linkTo(link) : undefined}
         />
@@ -41,4 +41,4 @@ const HistoryToday: React.FC = () => {
   )
 }
 
-export default HistoryToday
+export default RSS
