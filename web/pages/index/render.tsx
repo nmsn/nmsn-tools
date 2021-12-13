@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { SProps, IContext } from 'ssr-types-react'
 import { IData } from '~/typings/data'
 import { STORE_CONTEXT } from '_build/create-context'
@@ -20,22 +20,18 @@ const ContentCard = () => {
 export default function Index(props: SProps) {
   const { state, dispatch } = useContext<IContext<IData>>(STORE_CONTEXT)
 
+  const [step, setStep] = useState(0)
+
   const onChange = (key: number) => {
     console.log(key)
+    setStep(key)
   }
 
   return (
     <div className={styles.container}>
       <Title style={{ margin: '20px 0' }}>NMSN</Title>
       <div className={styles.content}>
-        <Board>
-          <div className={styles.left}>
-            {/* <ContentCard />
-            <ContentCard />
-            <ContentCard /> */}
-            <HistoryToday />
-          </div>
-        </Board>
+        <Board>{step === 0 ? <HistoryToday /> : undefined}</Board>
 
         <Switch onChange={onChange} num={5} />
       </div>

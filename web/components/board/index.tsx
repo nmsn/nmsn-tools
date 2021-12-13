@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './index.module.less'
 
 interface BoardProps {
-  children: JSX.Element | JSX.Element[]
+  children: JSX.Element | JSX.Element[] | undefined
   style?: React.CSSProperties
 }
 
