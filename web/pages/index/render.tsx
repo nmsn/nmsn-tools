@@ -5,6 +5,8 @@ import { STORE_CONTEXT } from '_build/create-context'
 import Title from '@/components/title'
 import Card from '@/components/card'
 import Switch from '@/components/switch'
+import Board from '@/components/board'
+import HistoryToday from '../historyToday'
 import styles from './index.module.less'
 
 const ContentCard = () => {
@@ -24,13 +26,17 @@ export default function Index(props: SProps) {
 
   return (
     <div className={styles.container}>
-      <Title>NMSN</Title>
+      <Title style={{ margin: '20px 0' }}>NMSN</Title>
       <div className={styles.content}>
-        <div className={styles.left}>
-          <ContentCard />
-          <ContentCard />
-          <ContentCard />
-        </div>
+        <Board>
+          <div className={styles.left}>
+            {/* <ContentCard />
+            <ContentCard />
+            <ContentCard /> */}
+            <HistoryToday />
+          </div>
+        </Board>
+
         <Switch onChange={onChange} num={5} />
       </div>
     </div>
