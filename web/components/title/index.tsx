@@ -1,8 +1,17 @@
-import React from 'react';
-import styles from './index.module.less';
+import React from 'react'
+import styles from './index.module.less'
 
-const Title: React.FC<{ children: string }> = ({ children }) => {
-  return <div className={styles.title}>{children}</div>
-};
+interface TitleProps {
+  children: string
+  style?: React.CSSProperties
+}
 
-export default Title;
+const Title: React.FC<TitleProps> = ({ children, style }) => {
+  return (
+    <div className={styles.title} style={style}>
+      {children}
+    </div>
+  )
+}
+
+export default Title
