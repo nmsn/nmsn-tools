@@ -35,6 +35,7 @@ const RSS: React.FC = () => {
           title={title}
           children={title}
           onClick={link ? () => linkTo(link) : undefined}
+          type="vertical"
         />
       ))}
     </div>

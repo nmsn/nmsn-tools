@@ -30,7 +30,8 @@ export default function Index(props: SProps) {
             {step === 1 ? <RSS /> : undefined}
           </>
         </Board>
-
+      </div>
+      <div className={styles.footer}>
         <Switch onChange={onChange} num={5} />
       </div>
     </div>
