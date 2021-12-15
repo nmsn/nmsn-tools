@@ -3,12 +3,12 @@ import { SProps, IContext } from 'ssr-types-react'
 import { IData } from '~/typings/data'
 import { STORE_CONTEXT } from '_build/create-context'
 import Title from '@/components/title'
-import Card from '@/components/card'
 import Switch from '@/components/switch'
 import Board from '@/components/board'
 import HistoryToday from '../historyToday'
 import RSS from '../rss'
 import styles from './index.module.less'
+import Skeleton from '@/components/skeleton'
 
 export default function Index(props: SProps) {
   const { state, dispatch } = useContext<IContext<IData>>(STORE_CONTEXT)
@@ -28,6 +28,9 @@ export default function Index(props: SProps) {
           <>
             {step === 0 ? <HistoryToday /> : undefined}
             {step === 1 ? <RSS /> : undefined}
+            {step === 2 ? (
+              <Skeleton cardStyle={{ height: 77, width: 475 }} />
+            ) : undefined}
           </>
         </Board>
       </div>
